@@ -31,11 +31,11 @@ var burgerModel = {
         });
     },
 
-    insertOne: function(INPUT_burger_name, INPUT_devoured, modelCallback){
+    insertOne: function(INPUT_burger_name, modelCallback){
     	var now = new Date();
 		//we need to format the date to: %d/%m/%Y %H:%i:%s
 		now = dateFormat(now, "dd/mm/yyyy h:MM:ss");
-    	orm.insertOne(INPUT_burger_name, INPUT_devoured, now, function(response){
+    	orm.insertOne(INPUT_burger_name, 0, now, function(response){
     		controllerCallback(response);
         });
     },

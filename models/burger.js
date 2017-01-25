@@ -25,9 +25,9 @@ var dateFormat = require('dateformat');
 
 var burgerModel = {
 
-    selectAll: function(controllerCallback){
+    selectAll: function(modelCallback){
         orm.selectAll(function(response){
-            controllerCallback(response);
+            modelCallback(response);
         });
     },
 
@@ -36,13 +36,13 @@ var burgerModel = {
 		//we need to format the date to: %d/%m/%Y %H:%i:%s
 		now = dateFormat(now, "dd/mm/yyyy h:MM:ss");
     	orm.insertOne(INPUT_burger_name, 0, now, function(response){
-    		controllerCallback(response);
+    		modelCallback(response);
         });
     },
 
     updateOne: function(INPUT_burger_name, INPUT_devoured_bool, modelCallback){
     	orm.updateOne(INPUT_burger_name, INPUT_devoured_bool, function(response){
-    		controllerCallback(response);
+    		modelCallback(response);
         });
     }
 

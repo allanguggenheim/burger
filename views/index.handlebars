@@ -1,16 +1,16 @@
 <div class="row">
-    <h1>Burger Tracker</h1>
-    <h3>Eat burgers. Track your progress.  Have fun!</h3>
+    <h1><ul>Burgers for Humans to eat using Mouse Resturaunt</ul></h1>
+    <h3>Time to eat some burgers!</h3>
     <img src="/assets/img/burger.jpg" alt="burger" class="main-image">
     <h2>Add a new Burger to your list!</h2>
-    <form action="/api" method="POST">
+    <form action="/burgers/create" method="POST">
         <input type="text" name="burgerName" placeholder="Enter burger name here">
         <button class="burger-button" type="submit">Submit</button>
     </form>
 </div>
 <div class="row">
     <div class="container-left">
-        <h2 class="container-heading">Burgers I Want to Eat</h2>
+        <h2 class="container-heading">Menu</h2>
         {{#each burgers}} 
             {{#unless this.eaten}}
                 {{> burgers/burger}}
@@ -18,7 +18,7 @@
         {{/each}}
     </div>
     <div class="container-right">
-        <h2 class="container-heading">Burgers I've Eaten</h2>
+        <h2 class="container-heading">Consumed</h2>
         {{#each burgers}}
             {{#if this.eaten}}
                 {{> burgers/burger}}
